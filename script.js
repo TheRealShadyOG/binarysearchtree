@@ -54,6 +54,28 @@ function prepArray(array) {
 
 let array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 
+// Function to insert value
+function insert(value, tree) {
+  // Current postion
+  let current = tree;
+  // Exit Statement
+  if (current === null) {
+    current = node(value);
+    return current;
+  }
+
+  // If value is less than current move to left of current
+  if (value < current.data) {
+    current.leftChildren = insert(value, current.leftChildren);
+    // If value is greater than current move to right of current
+  } else if (value > current.data) {
+    current.rightChildren = insert(value, current.rightChildren);
+  }
+
+  // Return tree
+  return tree;
+}
+
 // Function to display BST in console
 // Provided by online course I did not write this
 const prettyPrint = (node, prefix = '', isLeft = true) => {
