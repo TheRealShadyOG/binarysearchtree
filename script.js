@@ -12,9 +12,7 @@ const tree = (array) => {
   // Sort and remove duplicates from array
   let newArray = prepArray(array);
 
-  return {
-    root: buildTree(newArray, 0, newArray.length),
-  };
+  return buildTree(newArray, 0, newArray.length);
 };
 
 // Function for building tree
